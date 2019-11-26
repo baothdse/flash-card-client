@@ -1,0 +1,17 @@
+module.exports = {
+  USER_URL: '/user',
+  LOGIN: '/login',
+  REGIST: '/regist',
+  CARD_URL: '/card',
+  FOLDER_URL: '/folder',
+  RECENT_URL: '/recent',
+  TOP_4: '/top-4',
+  RANDOM: '/random',
+  SEARCH: '/search',
+  NEW: '/new',
+  UPDATE: '/update',
+  IMG: '/img',
+  UPLOAD: '/upload',
+  UNAUTH_URL: '/unauth',
+  AUTH_URL: '/auth',
+};

@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <head>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <!-- <v-content>
+      <NavigationMenu/>
+      <VocabCard/>
+    </v-content> -->
+    <router-view/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavigationBar from "./components/home/navigation/NavigationBar";
+import VocabCard from "./components/home/content/VocabCard";
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
+    NavigationBar,
+    VocabCard
+  },
+  data() {
+    return {
+      //
+    };
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import './utils/css/css-utils.css';
 </style>
