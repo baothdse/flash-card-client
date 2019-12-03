@@ -41,6 +41,9 @@ import cookie from "@/utils/js/cookie.js";
 
 export default {
   name: "NavigationBar",
+  data() {
+    return {a: ''};
+  },
   props: {},
   components: {
     WordDefinition
@@ -59,14 +62,11 @@ export default {
       });
     },
     getAnotherWord() {
-      this.$store.dispatch("cards/getRandomWord", this.$route.params.folderId);
+      this.$store.dispatch("cards/getRandomWord");
     }
   },
   created() {
-    let token = cookie.getCookie("token");
-    this.$store.dispatch("cards/getRandomWord", this.$route.params.folderId);
-    console.log("here")
-    console.log(this.state)
+    this.$store.dispatch("cards/getRandomWord");
     // console.log(this.$route)
   }
 };

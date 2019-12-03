@@ -36,8 +36,8 @@ import { mapState } from "vuex";
 
 export default {
   name: "NavigationBar",
-  data: {
-    searchingWord: ""
+  data() {
+    return {searchingWord: ""};
   },
   computed: mapState({
     word: state => state.cards.word.data

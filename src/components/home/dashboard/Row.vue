@@ -25,11 +25,11 @@ export default {
   data() {
   },
   created() {
-    console.log(this.folders)
+    // console.log(this.folders)
   },
   methods: {
     openFolder(id, e) {
-      this.$router.push({ name: 'set', params: {folderId: id}});
+      this.$router.push({ path: '/set'});
     }
   },
 };

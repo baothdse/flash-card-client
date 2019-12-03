@@ -1,12 +1,9 @@
 import http from '../utils/http-common';
 
 export default {
-  getRandomWord(folderId, cb) {
+  getRandomWord(cb) {
     const config = {
       withCredentials: true,
-      params: {
-        folder: folderId,
-      },
     };
     http
       .get('/auth/card/random', config)

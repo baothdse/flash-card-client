@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import CardSet from './views/Set.vue';
+import CSet from './views/Set.vue';
 
 Vue.use(Router);
 
@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/set',
       name: 'set',
-      component: CardSet,
+      component: CSet,
     },
     {
       path: '/word/new',

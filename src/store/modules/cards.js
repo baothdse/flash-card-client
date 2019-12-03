@@ -9,8 +9,8 @@ const getters = {
 };
 
 const actions = {
-  getRandomWord({ commit }, folderId) {
-    cardApi.getRandomWord(folderId, (word) => {
+  getRandomWord({ commit }) {
+    cardApi.getRandomWord((word) => {
       commit('setWord', word);
     });
   },
