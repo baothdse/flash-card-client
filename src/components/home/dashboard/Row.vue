@@ -22,14 +22,13 @@ export default {
   components: {
     CardSet
   },
-  data() {
-  },
   created() {
     // console.log(this.folders)
   },
   methods: {
     openFolder(id, e) {
-      this.$router.push({ path: '/set'});
+      document.cookie=`folder_id=${id}`;
+      this.$router.push({ path: "/set" });
     }
   },
 };

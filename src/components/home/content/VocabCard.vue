@@ -2,12 +2,25 @@
   <v-content>
     <v-container fluid>
       <v-layout>
-        <v-flex xs12 sm6 offset-sm3>
+        <v-flex
+          xs12
+          sm6
+          offset-sm3
+        >
           <v-card class="word-card">
-            <v-img :src="word.imageUrl" aspect-ratio="2.75"></v-img>
+            <v-img
+              :src="word.imageUrl"
+              aspect-ratio="2.75"
+            ></v-img>
             <v-card-title primary-title>
-              <div class="card-content" v-if="word">
-                <h2 class="headline mb-0" style="text-align: center">
+              <div
+                class="card-content"
+                v-if="word"
+              >
+                <h2
+                  class="headline mb-0"
+                  style="text-align: center"
+                >
                   <strong>{{ word.term }}</strong>
                 </h2>
                 <i>
@@ -22,8 +35,16 @@
             </v-card-title>
             <div class="buttons-group">
               <v-card-actions>
-                <v-btn flat color="green" @click="updateWord">Update</v-btn>
-                <v-btn flat color="green" @click="getAnotherWord">Next</v-btn>
+                <v-btn
+                  flat
+                  color="green"
+                  @click="updateWord"
+                >Update</v-btn>
+                <v-btn
+                  flat
+                  color="green"
+                  @click="getAnotherWord"
+                >Next</v-btn>
               </v-card-actions>
             </div>
           </v-card>
@@ -40,17 +61,14 @@ import { mapActions, mapState } from "vuex";
 import cookie from "@/utils/js/cookie.js";
 
 export default {
-  name: "NavigationBar",
-  data() {
-    return {a: ''};
-  },
+  name: "VocabCard",
+  computed: mapState({
+    word: state => state.cards.word
+  }),
   props: {},
   components: {
     WordDefinition
   },
-  computed: mapState({
-    word: state => state.cards.word.data
-  }),
   methods: {
     ...mapActions({
       getRandomWord: "cards/getRandomWord"
@@ -67,7 +85,6 @@ export default {
   },
   created() {
     this.$store.dispatch("cards/getRandomWord");
-    // console.log(this.$route)
   }
 };
 </script>

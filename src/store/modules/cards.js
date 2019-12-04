@@ -11,7 +11,7 @@ const getters = {
 const actions = {
   getRandomWord({ commit }) {
     cardApi.getRandomWord((word) => {
-      commit('setWord', word);
+      commit('setWord', word.data);
     });
   },
   searchWord({ commit }, searchingWord) {

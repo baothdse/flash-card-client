@@ -28,7 +28,7 @@ import { mapState } from "vuex";
 export default {
   name: "WordDefinition",
   computed: mapState({
-    word: state => state.cards.word.data
+    word: state => state.cards.word
   }),
 };
 </script>

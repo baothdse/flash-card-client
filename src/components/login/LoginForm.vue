@@ -73,7 +73,7 @@ export default {
       }
       userApi.login(this.username, this.password, response => {
         if (response.status === 200) {
-          this.$router.push("/dashboard");
+          this.$router.push({ path: "/dashboard" });
         } else {
           this.showError = true;
           this.errorMessage = messageConstants.ERROR.INCORECT_USERNAME_PASSWORD;

@@ -7,7 +7,7 @@
 
 <script>
 import NavigationBar from "../components/home/navigation/NavigationBar";
-import VocabCard from "../components/home/content/VocabCard.vue";
+import VocabCard from "../components/home/content/VocabCard";
 
 export default {
   components: {
