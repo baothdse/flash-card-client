@@ -7,10 +7,10 @@
     
     <v-toolbar-items>
       <v-btn flat color="green" class="nav-item"> 
-        <router-link to="/page">Quiz</router-link>
-      </v-btn>
-      <v-btn flat color="green" class="nav-item"> 
         <router-link to="/page2">Folder</router-link>
+      </v-btn>
+       <v-btn flat color="green" class="nav-item"> 
+        <router-link to="/page">Quiz</router-link>
       </v-btn>
       <v-btn flat color="green" class="nav-item"> 
         <router-link to="/page2">Stat</router-link>
@@ -47,7 +47,7 @@ export default {
       this.$store.dispatch("cards/searchWord", this.searchingWord);
     },
     backToHomePage() {
-      this.$router.push("/set");
+      this.$router.push("/dashboard");
     },
     isHomePage() {
       return this.$route.path === "/set" ? true : false;

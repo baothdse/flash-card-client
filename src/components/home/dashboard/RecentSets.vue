@@ -1,6 +1,9 @@
 <template>
   <v-container>
-      <Row v-if="isReady" :folders="folders" />
+    <Row
+      v-if="isReady"
+      :folders="folders"
+    />
   </v-container>
 </template>
 
@@ -17,7 +20,7 @@ export default {
   data() {
     return {
       folders: [],
-      isReady: false,
+      isReady: false
     };
   },
   created() {
@@ -29,8 +32,8 @@ export default {
         this.folders = folders;
         this.isReady = true;
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

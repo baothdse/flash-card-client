@@ -47,7 +47,7 @@ export default {
         message: "Succesful"
       };
     } else {
-      let word = this.$store.state.cards.word.data;
+      let word = this.$store.state.cards.word;
       return {
         term: word.term,
         pronunciation: word.pronunciation,

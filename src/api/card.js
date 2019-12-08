@@ -15,20 +15,23 @@ export default {
       });
   },
   searchWord(word, cb) {
+    const config = {
+      withCredentials: true,
+      params: { word },
+    };
     http
-      .get('/card/search', { params: { word } })
-      .then((result) => {
-        cb(result);
+      .get('/auth/card/search', config)
+      .then((response) => {
+        cb(response.data);
       })
       .catch((err) => {
         throw err;
       });
   },
-  add(word, token, cb) {
+  add(word, cb) {
     const config = {
       withCredentials: true,
     };
-
     http
       .post('/auth/card/new', { word }, config)
       .then(result => cb(result))
@@ -38,21 +41,21 @@ export default {
   },
   update(word, cb) {
     http
-      .post('/card/update', { word })
+      .post('/auth/card/update', { word }, { withCredentials: true })
       .then(result => cb(result))
       .catch((err) => {
         throw err;
       });
   },
-  uploadImg(img, token, cb) {
+  uploadImg(img, cb) {
     const formData = new FormData();
     formData.append('image', img);
     http
       .post('/auth/card/img/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          withCredentials: true,
         },
+        withCredentials: true,
       })
       .then(result => cb(result))
       .catch((err) => {

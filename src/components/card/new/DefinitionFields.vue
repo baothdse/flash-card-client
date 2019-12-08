@@ -15,7 +15,10 @@
         required
         @change="emitDefinition"
       ></v-text-field>
-      <div v-for="(example, index) in examples" :key="`${index}`">
+      <div
+        v-for="(example, index) in examples"
+        :key="`${index}`"
+      >
         <v-text-field
           v-model="examples[index]"
           label="Example"
@@ -26,12 +29,26 @@
       </div>
     </v-flex>
     <div class="text-xs-center">
-      <v-btn class="add-button mx-2" fab dark small color="indigo" @click="addDefinition">
+      <v-btn
+        class="add-button mx-2"
+        fab
+        dark
+        small
+        color="indigo"
+        @click="addDefinition"
+      >
         <v-icon dark>add</v-icon>
       </v-btn>
     </div>
     <div class="text-xs-center">
-      <v-btn class="ma-2" outlined small fab color="teal" @click="addExample">
+      <v-btn
+        class="ma-2"
+        outlined
+        small
+        fab
+        color="teal"
+        @click="addExample"
+      >
         <v-icon dark>add</v-icon>
       </v-btn>
     </div>
@@ -40,22 +57,29 @@
 
 <script>
 export default {
+  name: "Definition",
   data: function() {
     return {
       numberOfContext: 1,
-      context: this.definitionData.context,
-      definition: this.definitionData.definition,
+      context: "",
+      definition: "",
       examples: [""],
       wordDefinition: {}
     };
   },
-  name: "Definition",
+  created() {
+    if (this.$route.path === "/word/update") {
+      this.context = this.definitionData.context;
+      this.definition = this.definitionData.definition;
+      this.examples = this.definitionData.examples;
+    }
+  },
   methods: {
     addDefinition(event) {
       this.$emit("clicked", this.numberOfContext++);
     },
     addExample(event) {
-      this.examples.push('');
+      this.examples.push("");
     },
     emitDefinition(event) {
       this.wordDefinition.context = this.context;
